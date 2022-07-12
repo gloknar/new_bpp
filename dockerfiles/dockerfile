@@ -7,4 +7,4 @@ COPY dockerfiles/requirements.txt /tmp/
 RUN set -ex; \
     pip3 --no-cache-dir install --requirement /tmp/requirements.txt
 
-ENV PYTHONPATH "/workspaces/ejercicio_purchase_prediction_all/src"
+ENV PYTHONPATH "/workspaces/prueba/src"
