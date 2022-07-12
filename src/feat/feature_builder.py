@@ -127,8 +127,8 @@ class FeatureHandler:
 
 
 if __name__ == "__main__":
-    customers = pd.read_csv("/workspaces/hnb/data/customer_data.csv")
-    trans = pd.read_csv("/workspaces/hnb/data/transactions_data.csv")
+    customers = pd.read_csv("/workspaces/new_bpp/data/customer_data.csv")
+    trans = pd.read_csv("/workspaces/new_bpp/data/transactions_data.csv")
     trans["Date"] = [
         datetime.datetime.strptime(date_, '%Y-%m-%d')
         for date_ in trans["Date"]
