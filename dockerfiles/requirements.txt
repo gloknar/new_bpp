@@ -1,0 +1,5 @@
+matplotlib==3.5.1
+jupyterlab==3.2.9
+pytest==7.0.0
+scikit-learn==1.1.1
+pandas==1.4.0

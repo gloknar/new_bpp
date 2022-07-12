@@ -1,0 +1,54 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.209.6/containers/docker-existing-dockerfile
+{
+	"name": "BPP",
+
+	// Sets the run context to one level up instead of the .devcontainer folder.
+	"context": "..",
+
+	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+	"dockerFile": "../dockerfiles/dockerfile",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings":  {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": false,
+		"python.linting.flake8Path": "/usr/local/bin/flake8",
+		"python.linting.flake8Enabled": true,
+		"python.testing.pytestPath": "/usr/local/bin/pytest",
+		"python.testing.pytestEnabled": true,
+		"python.testing.unittestEnabled": false,
+		"python.testing.autoTestDiscoverOnSaveEnabled": true,
+		"autoDocstring.docstringFormat": "numpy",	
+		"files.eol": "\n",
+		"files.exclude": {
+			".pytest_cache": true,
+			"*/**/__pycache__": true,
+			"*/**/.ipynb_checkpoints": true,
+			"*.pyc": true,
+		},
+		"python.testing.pytestArgs": [
+			"-s",
+			"--disable-pytest-warnings",
+			"./src/",
+	   ],
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"eamodio.gitlens",
+		"njpwerner.autodocstring",
+		"tomoki1207.pdf",
+		"ms-python.python",
+	],
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	//"runArgs": ["--runtime=nvidia"]
+	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
+
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind" ],
+
+	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+	//"remoteUser": "researcher"
+}

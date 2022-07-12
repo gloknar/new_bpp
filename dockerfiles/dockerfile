@@ -1,0 +1,10 @@
+# set base image (host OS)
+FROM python:3.8
+
+
+COPY dockerfiles/requirements.txt /tmp/
+
+RUN set -ex; \
+    pip3 --no-cache-dir install --requirement /tmp/requirements.txt
+
+ENV PYTHONPATH "/workspaces/ejercicio_purchase_prediction_all/src"
